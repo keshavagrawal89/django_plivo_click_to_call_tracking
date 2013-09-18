@@ -13,6 +13,7 @@ Just plain django project.
 ====================
 
 This will present a text box and a submit button. User can enter their number and press "Click Me".
+
 1. Agent's number configured gets the call.
 2. He hears some text notification that he is going to be connected with some visitor
 3. Customter/user gets the call on the number entered in the textbox

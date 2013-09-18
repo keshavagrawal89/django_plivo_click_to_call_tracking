@@ -1,0 +1,43 @@
+            div.center-div{
+                text-align:center;
+                margin: 0 auto;
+            }
+
+.class-btn {
+                margin:  0 auto;
+                -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+                -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+                box-shadow:inset 0px 1px 0px 0px #ffffff;
+                background-color:rgba(0,0,0,0.4);
+                -webkit-border-top-left-radius:6px;
+                -moz-border-radius-topleft:6px;
+                border-top-left-radius:6px;
+                -webkit-border-top-right-radius:6px;
+                -moz-border-radius-topright:6px;
+                border-top-right-radius:6px;
+                -webkit-border-bottom-right-radius:6px;
+                -moz-border-radius-bottomright:6px;
+                border-bottom-right-radius:6px;
+                -webkit-border-bottom-left-radius:6px;
+                -moz-border-radius-bottomleft:6px;
+                border-bottom-left-radius:6px;
+                text-indent:0;
+                border:1px solid #dcdcdc;
+                display:inline-block;
+                color:black;
+                font-size:15px;
+                font-weight:normal;
+                font-style:normal;
+                height:35px;
+                line-height:30px;
+                text-decoration:none;
+                text-align:center;
+            }.class-btn:active {
+                position:relative;
+                top:1px;
+            }.class-btn:hover{
+                   font-size:16.5px;
+                   cursor: pointer;
+                   color:#fff;
+                   background-color:transparent;
+            }

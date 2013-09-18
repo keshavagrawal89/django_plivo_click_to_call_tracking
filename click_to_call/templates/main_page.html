@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Click To Call</title>
+		<link rel="stylesheet" href="/site_media/css/style.css" type="text/css" />
+	</head>
+
+	<body>
+		<div class="center-div">
+			<form class="usr_input" action="/send_call/" method="POST">
+			{% csrf_token %}
+				<input type="text" id="customer-number" name="customer-number"/>
+				<button type="submit" value="submit">Call Me!</button>
+			</form>
+		</div>
+	</body>
+
+</html>

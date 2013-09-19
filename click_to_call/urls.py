@@ -13,6 +13,9 @@ urlpatterns = patterns('',
 	(r'^send_call/$', send_call),
 	(r'^dialagent/$', dialagent),
 	(r'^hangup_lead/$', hangup_lead),
+    #Care to have some basic tracking?
+    	(r'^track_lead/$', track_lead),
+    ###################################
 	(r'^site_media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': site_media }),
     # Examples:
     # url(r'^$', 'click_to_call.views.home', name='home'),

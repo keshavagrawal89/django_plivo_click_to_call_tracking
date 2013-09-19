@@ -21,3 +21,7 @@ This will present a text box and a submit button. User can enter their number an
 5. At the end of the call 'from'(User/Customer) number, 'to'(Agent number) and Duration of the call is stored in the DB. 
 6. This data can be easily used to draw a quick graph using so many graph JavaScripts available. And that will help to get some statistics.
 7. With this current project data is stored in the db withh table name "Lead" (Check models.py)
+
+====================
+
+![alt tag] (https://www.evernote.com/shard/s160/sh/4c5c5307-715a-4309-8d98-63f50263aa25/1d478615c707a3082eacf5931410f2a9/deep/0/Screenshot%209/19/13%2011:44%20PM.jpg)

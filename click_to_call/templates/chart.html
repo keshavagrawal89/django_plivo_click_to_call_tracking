@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>Line Chart</title>
+<script src="/site_media/js/Chart.js"></script>
+<style>
+canvas{
+}
+</style>
+</head>
+<body>
+<canvas id="canvas" height="450" width="600"></canvas>
+
+{% csrf_token %}
+
+
+<script>
+
+function get_random_color() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.round(Math.random() * 15)];
+    }
+	console.log("I am in function");
+    return color;
+}
+
+var date_labels = new Array();
+{% for call_date in date_list %}
+	date_labels.push(String("{{call_date}}"))
+{% endfor %}
+
+var data_sets = new Array()
+
+var lineChartData = {
+labels : date_labels,
+datasets : [
+{% for item in final_list %}
+{
+
+fillColor : "rgba(151,187,205,0.5)",
+strokeColor : "rgba(151,187,205,1)",
+pointColor : "rgba(151,187,205,1)",
+pointStrokeColor : get_random_color(),
+data : [{% for sub_item in item %} {{sub_item}}, {% endfor %}]
+},
+{% endfor %}
+]
+
+}
+
+var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+
+</script>
+</body>
+</html>

@@ -8,6 +8,7 @@ from django.conf import settings
 from decimal import Decimal
 import plivo
 from django.views.decorators.csrf import csrf_exempt
+from clicktocall.views import Lead
 
 
 def main_page(request):
@@ -60,7 +61,7 @@ def dialagent(request):
 
 @csrf_exempt
 def hangup_lead(request):
-	call_duartion = Decimal(request.POST.get('Duration'))
+	call_duration = Decimal(request.POST.get('Duration'))
 	caller = int(request.POST.get('From'))
 	agent_number = int(request.POST.get('To'))
 	

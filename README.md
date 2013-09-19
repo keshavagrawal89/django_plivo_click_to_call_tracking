@@ -24,7 +24,7 @@ This will present a text box and a submit button. User can enter their number an
 
 ====================
 
-This is just to show how data can be pulled from the db and can reflected on a graph. Notice '/track_lead/' under urls.py
+This is just to show how data can be pulled from the db and reflected on a graph. Notice '/track_lead/' under urls.py
 
 ![alt tag] (https://www.evernote.com/shard/s160/sh/4c5c5307-715a-4309-8d98-63f50263aa25/1d478615c707a3082eacf5931410f2a9/deep/0/Screenshot%209/19/13%2011:44%20PM.jpg)
 

@@ -2,14 +2,22 @@
 <html>
 <head>
 <title>Line Chart</title>
-<script src="/site_media/Chart.js"></script>
+<script src="/site_media/js/Chart.js"></script>
+<script>
+	var numberArray = new Array();
+	var numberColorArray = new Array();
+	{% for number_item in numbers %}
+		numberArray.push({{number_item}});
+	{% endfor %}
+</script>
 <style>
 canvas{
 }
 </style>
 </head>
+
 <body>
-<canvas id="canvas" height="450" width="600"></canvas>
+<canvas id="canvas" height="450" width="600" style="float:left"></canvas>
 
 {% csrf_token %}
 
@@ -22,7 +30,7 @@ function get_random_color() {
     for (var i = 0; i < 6; i++ ) {
         color += letters[Math.round(Math.random() * 15)];
     }
-	console.log("I am in function");
+	numberColorArray.push(color);
     return color;
 }
 
@@ -53,6 +61,20 @@ data : [{% for sub_item in item %} {{sub_item}}, {% endfor %}]
 var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
 
 </script>
-<!-- How will final chart will have number displayed as well? Exercise ;)-->
+
+<div class="legends" id="legends" style = "float:right;padding-right:600px;padding-top:30px;">
+Legends:</br></br>
+<p>Color : Tracking Number</p>
+</div>
+
+<script>
+	alert("Helloo");
+	for(ele=0; ele < numberColorArray.length; ele++)
+	{
+		var innerSpan = document.getElementById("legends").innerHTML;
+		document.getElementById('legends').innerHTML= innerSpan + "<div><p><span style=width:100px;background-color:" + numberColorArray[ele] + ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp; : " + numberArray[ele] + "</p>" + "</div>";
+	}
+</script>
+
 </body>
 </html>

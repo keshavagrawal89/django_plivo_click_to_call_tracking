@@ -15,9 +15,32 @@ import datetime
 def main_page(request):
 	variables = {'':''}
 	return render_to_response('main_page.html', RequestContext(request, variables))
+	
+	
+def manage_lead(request):
+    	lead_numbers = []
+    	if request.method == "POST":
+        	lead_number = request.POST.get('lead-number')
+        	lead_zone = request.POST.get('lead-zone')
+
+        	save_lead_number(lead_number, lead_zone)
+
+    	lead_numbers = get_lead_numbers()
+    	variables = {'lead_numbers':lead_numbers}
+
+    	return render_to_response('manage_lead.html', RequestContext(request, variables))
+    	
+def get_lead_numbers():
+    	lead_zone = LeadNumberZones.objects.values('lead_number','zone').order_by('lead_number')
+    	return lead_zone.values_list('lead_number','zone')
+    	
+def save_lead_number(lead_number, lead_zone):
+    	lead_number_zone = LeadNumberZones(lead_number = lead_number, zone = lead_zone)
+    	lead_number_zone.save()
 
 def track_lead(request):
 	cursor = connection.cursor()
+	#Yeah I find direct query better sometimes than ORM. Handle SQL injections :)
 	cursor.execute("select count(*), to_number, date_of_call from clicktocall_lead group by date_of_call,to_number order by date_of_call, to_number")
 
 	res = cursor.fetchall()

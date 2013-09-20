@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Click To Call{% endblock %}
+{% block content %}
+		<div class="center-div user-input">
+			<form action="/manage_lead/" method="POST">
+			{% csrf_token %}
+				<input type="text" id="lead-number" name="lead-number"  required >
+				<input type="text" id="lead-zone" name="lead-zone" required >
+				<button type="submit" class="class-btn" value="submit">Insert Tracking Number</button>
+			</form>
+		</div>
+		<div class="center-div">
+			<h2><u>Lead Numbers</u></h2>
+			<table align="center">
+				<thead>
+					<th>Lead Number</th>
+					<th>Field</th>
+				</thead>
+				<tbody>
+			{% for lead in lead_numbers %}
+			 	<tr>
+					<td>{{lead.0}}</td><td>{{lead.1}}</td>
+				</tr>
+			{% endfor %}
+				</tbody>
+			</table>
+		</div>
+{% endblock %}

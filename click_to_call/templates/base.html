@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="/site_media/css/style.css" type="text/css" />
+	</head>
+
+	<body>
+		<h1 style="text-align:center;">{% block head %}{% endblock %}</h1>
+		<div class="page-wrap">
+			<div id="navigation">
+				<div class="hard-navigation">
+						<a href="/track_lead/">Track Lead</a> <span style="color:black;"> | </span>
+						<a href="/manage_lead/">Manage Lead Number</a>
+				</div>
+			</div>
+			<div class="content">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+	</body>
+
+</html>

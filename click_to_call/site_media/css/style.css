@@ -1,7 +1,42 @@
-            div.center-div{
-                text-align:center;
-                margin: 0 auto;
-            }
+body{
+	background-color:#4c7546;
+}
+
+a{
+	color:#000;
+}
+
+.hard-navigation{
+	float:right;
+}
+
+a:hover{
+	color:#fff;
+}
+
+div.user-input{
+	padding-top:250px;
+}
+
+div.center-div{
+	text-align:center;
+    margin: 0 auto;
+	}
+
+div.user-input input{
+	font-size:20px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+}
+
+div table{
+	text-align:right;
+	border-spacing:5px;
+}
 
 .class-btn {
                 margin:  0 auto;
@@ -38,6 +73,7 @@
             }.class-btn:hover{
                    font-size:16.5px;
                    cursor: pointer;
-                   color:#fff;
+                   color:#ffe;
                    background-color:transparent;
             }
+

@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 	(r'^dialagent/$', dialagent),
 	(r'^hangup_lead/$', hangup_lead),
     #Care to have some basic tracking?
+    	(r'^manage_lead/$', manage_lead),
     	(r'^track_lead/$', track_lead),
     ###################################
 	(r'^site_media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': site_media }),

@@ -1,4 +1,4 @@
-django_click_to_call
+django_plivo_click_to_call_tracking
 ====================
 
 Nothing fancy.
@@ -26,7 +26,11 @@ This will present a text box and a submit button. User can enter their number an
 
 This is just to show how data can be pulled from the db and reflected on a graph. Notice '/track_lead/' under urls.py
 
-![alt tag] (https://www.evernote.com/shard/s160/sh/4c5c5307-715a-4309-8d98-63f50263aa25/1d478615c707a3082eacf5931410f2a9/deep/0/Screenshot%209/19/13%2011:44%20PM.jpg)
+![alt tag](https://www.evernote.com/shard/s160/sh/23127c7e-1d43-40ba-b7d3-6e1f8a5aa44a/0e73b63f961fbfbda049c80341cc2c95/deep/0/Screenshot%209/21/13%203:47%20AM.jpg)
 
+![alt tag] (https://www.evernote.com/shard/s160/sh/0346c435-ef00-438b-a868-54878baad50c/c1a67a518a920b978767a15530eb59ea/deep/0/Screenshot%209/21/13%203:46%20AM.jpg)
 
+Notice '/manage_lead/' under urls.py
+
+![alt tag] (https://www.evernote.com/shard/s160/sh/b3d286f7-2bc5-4f61-b0e0-16300c947065/3c97a2af2d1510e6448734e23212b06a/deep/0/Screenshot%209/21/13%203:50%20AM.jpg)
 Cheers!

@@ -9,3 +9,7 @@ class Lead(models.Model):
 	to_number = models.BigIntegerField(max_length=999999999999999)
 #Thinking of some data and tracking?
 	date_of_call = models.DateField()
+
+class LeadNumberZones(models.Model):
+    	lead_number = models.BigIntegerField(max_length=999999999999999)
+    	zone = models.CharField(max_length=50)

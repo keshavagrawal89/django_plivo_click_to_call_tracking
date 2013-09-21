@@ -59,6 +59,9 @@ def track_lead(request):
 
 	list_of_numbers = list(set(list_of_numbers))
 	list_of_dates = list(set(list_of_dates))
+	
+	list_of_dates.sort()
+	#Since list_of_numbers is a list of integers so no need of sorting as set() wont mess the sorting.
 
 	for number in list_of_numbers:
 		final_list.append([])

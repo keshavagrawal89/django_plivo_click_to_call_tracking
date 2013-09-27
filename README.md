@@ -1,6 +1,8 @@
 django_plivo_click_to_call_tracking
 ====================
 
+Django Version: 1.5
+
 Nothing fancy.
 
 Just plain django project.

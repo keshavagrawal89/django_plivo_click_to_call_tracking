@@ -10,6 +10,11 @@ ADMINS = (
 AUTH_ID = '<put_your_auth_id>'
 AUTH_TOKEN = '<put_your_auth_token>'
 
+MAILGUN_DOMAIN = 'xyz.mailgun.org'
+TO_EMAIL = 'admin@xyz.com'
+FROM_EMAIL = 'abc@xyz.com'
+MAILGUN_TOKEN = '<key>'
+
 MANAGERS = ADMINS
 
 DATABASES = {

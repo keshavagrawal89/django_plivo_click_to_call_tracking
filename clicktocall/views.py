@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from clicktocall.views import Lead
 from django.db import connection
 import datetime
+import requests
 
 def main_page(request):
 	variables = {'':''}
@@ -112,6 +113,48 @@ def get_plivo_api():
 	auth_token = settings.AUTH_TOKEN
 
 	return plivo.RestAPI(auth_id = auth_id, auth_token = auth_token)
+
+def capture_report(request):
+    print "I am here"
+    if request.method == "POST":
+        encoded_img_string = request.POST.get('file')
+    if encoded_img_string != '' and encoded_img_string is not None:
+        print encoded_img_string[encoded_img_string.index("base64,") + len("base64,"):]
+        send_report(encoded_img_string[encoded_img_string.index("base64,") + len("base64,"):])
+    return HttpResponse("OK");
+
+
+def send_report(encoded_img_string):
+    fh = open("/tmp/imageToBeSaved.png","wb")
+    fh.write(encoded_img_string.decode('base64'))
+    fh.close()
+    mail_report()
+
+def mail_report():
+    from_email = settings.FROM_EMAIL
+    to_email = settings.TO_EMAIL
+    mailgun_token = settings.MAILGUN_TOKEN
+    mail_subject = "Report Capture"
+    domain = settings.MAILGUN_DOMAIN
+
+    body = "Here is your captured report. Please find the attachment for the same."
+    url = "https://api.mailgun.net/v2/%s/messages" % (domain)
+
+    send_mail_response = requests.post(
+        url,
+        auth=("api", mailgun_token),
+        files = {"attachment": open("/tmp/imageToBeSaved.png", "rb")},
+        data = {
+            "from": from_email,
+            "to": to_email,
+            "subject": mail_subject,
+            "text": body,
+        }
+    )
+    print send_mail_response
+    return send_mail_response
+
+	
 
 @csrf_exempt
 def dialagent(request):

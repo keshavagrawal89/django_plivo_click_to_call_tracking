@@ -4,14 +4,36 @@
 <title>Line Chart</title>
 <script src="/site_media/js/Chart.js"></script>
 <link rel="stylesheet" href="/site_media/css/style.css" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+<script src="/site_media/js/html2canvas.js" type="text/javascript"></script>
 <script>
 	var numberArray = new Array();
 	var numberColorArray = new Array();
 	{% for number_item in numbers %}
 		numberArray.push({{number_item}});
 	{% endfor %}
+    function capture_me(){
+        console.log("I am in capture!");
+        html2canvas($('body'), {
+            onrendered: function(canvas){
+                var imgString = canvas.toDataURL("image/png");
+                window.open(imgString);
+                $.ajax({
+                    url:'/capture/',
+                    type: 'POST',
+                    data: {
+                        file: imgString,
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
+                    },
+                });
+                console.log('I am here after html2canvas open! and the image url is: ' + imgString);
+        }
+    });
+    }
+
+
 </script>
-<style>c
+<style>
 canvas{
 }
 </style>
@@ -75,6 +97,8 @@ Legends:</br></br>
 		document.getElementById('legends').innerHTML= innerSpan + "<div><p><span style=width:100px;background-color:" + numberColorArray[ele] + ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>&nbsp; : " + numberArray[ele] + "</p>" + "</div>";
 	}
 </script>
-
+<div id="div-capture">
+    <input type="button" onClick="capture_me();" value="Send Report"></input>
+</div>
 </body>
 </html>

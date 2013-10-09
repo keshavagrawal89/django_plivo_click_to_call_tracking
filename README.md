@@ -29,10 +29,12 @@ This will present a text box and a submit button. User can enter their number an
 This is just to show how data can be pulled from the db and reflected on a graph. Notice '/track_lead/' under urls.py
 
 ![alt tag](https://www.evernote.com/shard/s160/sh/2f330658-764a-434d-aabe-c47f441feaed/269c4eb3c02cd95bd4fef09c6389b984/deep/0/Screenshot%209/21/13%203:36%20PM.jpg)
-
+![alt tag](https://dl.dropboxusercontent.com/u/54579287/Screenshot-4.png)
 ![alt tag] (https://www.evernote.com/shard/s160/sh/1f647d7c-9417-428e-9585-58f9b75cc7d0/93917c973b4a3b97363b5dafa9676ca2/deep/0/Screenshot%209/21/13%203:39%20PM.jpg)
 
 Notice '/manage_lead/' under urls.py
 
 ![alt tag] (https://www.evernote.com/shard/s160/sh/b3d286f7-2bc5-4f61-b0e0-16300c947065/3c97a2af2d1510e6448734e23212b06a/deep/0/Screenshot%209/21/13%203:50%20AM.jpg)
+
+Capture Report
 Cheers!

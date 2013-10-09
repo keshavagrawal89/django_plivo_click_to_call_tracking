@@ -118,8 +118,10 @@ def capture_report(request):
     print "I am here"
     if request.method == "POST":
         encoded_img_string = request.POST.get('file')
+        
     if encoded_img_string != '' and encoded_img_string is not None:
-        print encoded_img_string[encoded_img_string.index("base64,") + len("base64,"):]
+    	# encoded_img_string will have data like: "data:image/png;base64,IasWYsdw..."
+        # print  encoded_img_string[encoded_img_string.index("base64,") + len("base64,"):]
         send_report(encoded_img_string[encoded_img_string.index("base64,") + len("base64,"):])
     return HttpResponse("OK");
 
@@ -139,7 +141,8 @@ def mail_report():
 
     body = "Here is your captured report. Please find the attachment for the same."
     url = "https://api.mailgun.net/v2/%s/messages" % (domain)
-
+    
+    # I m using mailgun to send report mail.
     send_mail_response = requests.post(
         url,
         auth=("api", mailgun_token),

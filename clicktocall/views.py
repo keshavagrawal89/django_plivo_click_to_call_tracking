@@ -12,7 +12,7 @@ from clicktocall.views import Lead
 from django.db import connection
 import datetime
 import requests
-
+in
 def main_page(request):
 	variables = {'':''}
 	return render_to_response('main_page.html', RequestContext(request, variables))
@@ -146,12 +146,13 @@ def mail_report():
     send_mail_response = requests.post(
         url,
         auth=("api", mailgun_token),
-        files = {"attachment": open("/tmp/imageToBeSaved.png", "rb")},
+        files = {"inline": open("/tmp/imageToBeSaved.png", "rb")},
         data = {
             "from": from_email,
             "to": to_email,
             "subject": mail_subject,
             "text": body,
+            "html": '<html><img src="cid:imageToBeSaved.png"></html>',
         }
     )
     print send_mail_response

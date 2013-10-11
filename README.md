@@ -31,7 +31,15 @@ This is just to show how data can be pulled from the db and reflected on a graph
 ![alt tag](https://www.evernote.com/shard/s160/sh/2f330658-764a-434d-aabe-c47f441feaed/269c4eb3c02cd95bd4fef09c6389b984/deep/0/Screenshot%209/21/13%203:36%20PM.jpg)
 
 Notice the "Send Report" button
-![alt tag] (https://dl.dropboxusercontent.com/u/54579287/Screenshot-4.png)
+![alt tag](https://dl.dropboxusercontent.com/u/54579287/Screenshot-4.png)
+
+
+
+Report capture in the email:
+
+![alt tag](https://dl.dropboxusercontent.com/u/54579287/mail_snapshot.png)
+
+
 
 Change FROM_EMAIL, TO_EMAIL and other constants in settings.py file according to your mailgun details to receive email.
 Notice '/manage_lead/' under urls.py
